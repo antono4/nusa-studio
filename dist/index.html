@@ -48,6 +48,200 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+
+    /* ==================== VINE LEAF DECORATIONS ==================== */
+    .vine-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .vine {
+      position: absolute;
+      width: 120px;
+      height: 100vh;
+    }
+
+    .vine-left {
+      left: 0;
+      top: 0;
+    }
+
+    .vine-right {
+      right: 0;
+      top: 0;
+      transform: scaleX(-1);
+    }
+
+    .vine-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .vine-path {
+      fill: none;
+      stroke: var(--color-sage);
+      stroke-width: 2;
+      stroke-linecap: round;
+      opacity: 0.3;
+      filter: drop-shadow(0 0 3px rgba(139, 154, 125, 0.3));
+    }
+
+    .vine-path-gold {
+      fill: none;
+      stroke: var(--color-gold);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      opacity: 0.25;
+      filter: drop-shadow(0 0 2px rgba(212, 165, 116, 0.3));
+    }
+
+    .leaf {
+      transform-origin: center;
+      fill: var(--color-sage);
+      opacity: 0.4;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .leaf-gold {
+      fill: var(--color-gold-light);
+      opacity: 0.35;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .leaf-1 { animation: leaf-sway 4s ease-in-out infinite; transform-origin: 50% 0%; }
+    .leaf-2 { animation: leaf-sway 5s ease-in-out infinite reverse; transform-origin: 50% 0%; }
+    .leaf-3 { animation: leaf-sway 3.5s ease-in-out infinite 0.5s; transform-origin: 50% 0%; }
+    .leaf-4 { animation: leaf-sway 4.5s ease-in-out infinite 1s; transform-origin: 50% 0%; }
+    .leaf-5 { animation: leaf-sway 3s ease-in-out infinite 0.3s; transform-origin: 50% 0%; }
+
+    @keyframes leaf-sway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .vine-glow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 154, 125, 0.1) 0%, transparent 70%);
+      filter: blur(30px);
+      animation: glow-pulse 6s ease-in-out infinite;
+    }
+
+    .vine-glow-1 { top: 10%; left: -50px; animation-delay: 0s; }
+    .vine-glow-2 { top: 40%; left: -50px; animation-delay: 2s; }
+    .vine-glow-3 { top: 70%; left: -50px; animation-delay: 4s; }
+    .vine-glow-4 { top: 25%; right: -50px; animation-delay: 1s; }
+    .vine-glow-5 { top: 55%; right: -50px; animation-delay: 3s; }
+
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.2); }
+    }
+
+    /* Scroll animation for vines */
+    .vine-left {
+      animation: vine-scroll-left 1s ease-out forwards;
+    }
+
+    .vine-right {
+      animation: vine-scroll-right 1s ease-out forwards;
+    }
+
+    @keyframes vine-scroll-left {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes vine-scroll-right {
+      from { transform: scaleX(-1) translateX(-100%); opacity: 0; }
+      to { transform: scaleX(-1) translateX(0); opacity: 1; }
+    }
+
+    /* 3D Leaf depth effect */
+    .leaf-3d {
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .leaf-3d::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+      border-radius: inherit;
+    }
+
+    /* Falling leaves animation */
+    .falling-leaf {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2;
+      animation: falling 15s linear infinite;
+    }
+
+    .falling-leaf svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .falling-leaf-1 { left: 10%; animation-delay: 0s; }
+    .falling-leaf-2 { left: 25%; animation-delay: 3s; }
+    .falling-leaf-3 { left: 45%; animation-delay: 7s; }
+    .falling-leaf-4 { left: 70%; animation-delay: 11s; }
+    .falling-leaf-5 { left: 85%; animation-delay: 5s; }
+
+    @keyframes falling {
+      0% {
+        transform: translateY(-100px) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% {
+        transform: translateY(100vh) rotate(360deg) translateX(100px);
+        opacity: 0;
+      }
+    }
+
+    .falling-leaf:nth-child(odd) {
+      animation-name: falling-alt;
+    }
+
+    @keyframes falling-alt {
+      0% {
+        transform: translateY(-100px) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.5; }
+      100% {
+        transform: translateY(100vh) rotate(-360deg) translateX(-100px);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive vine hide on mobile */
+    @media (max-width: 1024px) {
+      .vine-container {
+        opacity: 0.5;
+      }
+      .vine {
+        width: 80px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .vine-container {
+        display: none;
+      }
     }
 
     body {
@@ -1274,6 +1468,119 @@
   </style>
 </head>
 <body>
+  <!-- Vine Leaf Decorations -->
+  <div class="vine-container">
+    <!-- Left Vine -->
+    <div class="vine vine-left">
+      <div class="vine-glow vine-glow-1"></div>
+      <div class="vine-glow vine-glow-2"></div>
+      <div class="vine-glow vine-glow-3"></div>
+      <svg class="vine-svg" viewBox="0 0 120 800" preserveAspectRatio="xMidYMin slice">
+        <!-- Main vine stem -->
+        <path class="vine-path" d="M60 0 Q30 100 60 200 Q90 300 60 400 Q30 500 60 600 Q90 700 60 800" />
+        <!-- Secondary stem -->
+        <path class="vine-path-gold" d="M60 150 Q20 180 30 220 Q50 250 60 280" />
+        <path class="vine-path-gold" d="M60 350 Q100 380 90 420 Q70 450 60 480" />
+        <path class="vine-path-gold" d="M60 550 Q20 580 30 620 Q50 650 60 680" />
+        
+        <!-- Leaves Left Side -->
+        <g class="leaf-3d">
+          <ellipse class="leaf leaf-1" cx="30" cy="100" rx="25" ry="12" transform="rotate(-30 30 100)" />
+          <ellipse class="leaf leaf-2" cx="25" cy="200" rx="22" ry="10" transform="rotate(-45 25 200)" />
+          <ellipse class="leaf-gold leaf-3" cx="35" cy="280" rx="20" ry="9" transform="rotate(-20 35 280)" />
+          <ellipse class="leaf leaf-4" cx="28" cy="380" rx="24" ry="11" transform="rotate(-35 28 380)" />
+          <ellipse class="leaf leaf-5" cx="32" cy="480" rx="21" ry="10" transform="rotate(-40 32 480)" />
+          <ellipse class="leaf-gold leaf-1" cx="30" cy="580" rx="23" ry="11" transform="rotate(-25 30 580)" />
+          <ellipse class="leaf leaf-2" cx="26" cy="680" rx="20" ry="9" transform="rotate(-50 26 680)" />
+          <ellipse class="leaf leaf-3" cx="33" cy="750" rx="22" ry="10" transform="rotate(-30 33 750)" />
+        </g>
+        
+        <!-- Leaves Right Side of Left Vine -->
+        <g class="leaf-3d">
+          <ellipse class="leaf-gold leaf-4" cx="90" cy="150" rx="22" ry="10" transform="rotate(40 90 150)" />
+          <ellipse class="leaf leaf-5" cx="95" cy="250" rx="20" ry="9" transform="rotate(50 95 250)" />
+          <ellipse class="leaf leaf-1" cx="88" cy="350" rx="24" ry="11" transform="rotate(35 88 350)" />
+          <ellipse class="leaf-gold leaf-2" cx="92" cy="450" rx="21" ry="10" transform="rotate(45 92 450)" />
+          <ellipse class="leaf leaf-3" cx="90" cy="550" rx="23" ry="11" transform="rotate(30 90 550)" />
+          <ellipse class="leaf leaf-4" cx="94" cy="650" rx="20" ry="9" transform="rotate(55 94 650)" />
+        </g>
+        
+        <!-- Small decorative dots -->
+        <circle cx="55" cy="50" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="130" r="2" fill="var(--color-gold)" opacity="0.3" />
+        <circle cx="55" cy="220" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="320" r="2" fill="var(--color-gold)" opacity="0.3" />
+        <circle cx="55" cy="420" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="520" r="2" fill="var(--color-gold)" opacity="0.3" />
+        <circle cx="55" cy="620" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="720" r="2" fill="var(--color-gold)" opacity="0.3" />
+      </svg>
+    </div>
+
+    <!-- Right Vine -->
+    <div class="vine vine-right">
+      <div class="vine-glow vine-glow-4"></div>
+      <div class="vine-glow vine-glow-5"></div>
+      <svg class="vine-svg" viewBox="0 0 120 800" preserveAspectRatio="xMidYMin slice">
+        <!-- Main vine stem -->
+        <path class="vine-path" d="M60 0 Q90 100 60 200 Q30 300 60 400 Q90 500 60 600 Q30 700 60 800" />
+        <!-- Secondary stems -->
+        <path class="vine-path-gold" d="M60 120 Q100 150 90 190 Q70 220 60 250" />
+        <path class="vine-path-gold" d="M60 320 Q20 350 30 390 Q50 420 60 450" />
+        <path class="vine-path-gold" d="M60 520 Q100 550 90 590 Q70 620 60 650" />
+        
+        <!-- Leaves -->
+        <g class="leaf-3d">
+          <ellipse class="leaf-gold leaf-2" cx="30" cy="80" rx="22" ry="10" transform="rotate(-35 30 80)" />
+          <ellipse class="leaf leaf-3" cx="35" cy="180" rx="24" ry="11" transform="rotate(-45 35 180)" />
+          <ellipse class="leaf leaf-4" cx="28" cy="280" rx="20" ry="9" transform="rotate(-25 28 280)" />
+          <ellipse class="leaf-gold leaf-5" cx="32" cy="380" rx="23" ry="11" transform="rotate(-40 32 380)" />
+          <ellipse class="leaf leaf-1" cx="30" cy="480" rx="21" ry="10" transform="rotate(-30 30 480)" />
+          <ellipse class="leaf leaf-2" cx="35" cy="580" rx="22" ry="10" transform="rotate(-50 35 580)" />
+          <ellipse class="leaf-gold leaf-3" cx="28" cy="680" rx="24" ry="11" transform="rotate(-35 28 680)" />
+          <ellipse class="leaf leaf-4" cx="33" cy="760" rx="20" ry="9" transform="rotate(-45 33 760)" />
+        </g>
+        
+        <!-- Right side leaves -->
+        <g class="leaf-3d">
+          <ellipse class="leaf leaf-5" cx="90" cy="130" rx="21" ry="10" transform="rotate(40 90 130)" />
+          <ellipse class="leaf-gold leaf-1" cx="88" cy="230" rx="23" ry="11" transform="rotate(30 88 230)" />
+          <ellipse class="leaf leaf-2" cx="92" cy="330" rx="20" ry="9" transform="rotate(50 92 330)" />
+          <ellipse class="leaf leaf-3" cx="90" cy="430" rx="22" ry="10" transform="rotate(35 90 430)" />
+          <ellipse class="leaf-gold leaf-4" cx="94" cy="530" rx="24" ry="11" transform="rotate(45 94 530)" />
+          <ellipse class="leaf leaf-5" cx="88" cy="630" rx="21" ry="10" transform="rotate(40 88 630)" />
+        </g>
+        
+        <!-- Decorative dots -->
+        <circle cx="55" cy="60" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="160" r="2" fill="var(--color-gold)" opacity="0.3" />
+        <circle cx="55" cy="260" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="360" r="2" fill="var(--color-gold)" opacity="0.3" />
+        <circle cx="55" cy="460" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="560" r="2" fill="var(--color-gold)" opacity="0.3" />
+        <circle cx="55" cy="660" r="3" fill="var(--color-sage)" opacity="0.4" />
+        <circle cx="65" cy="740" r="2" fill="var(--color-gold)" opacity="0.3" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Falling Leaves -->
+  <div class="falling-leaf falling-leaf-1">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5" fill="var(--color-sage)" transform="rotate(-30 12 12)" /></svg>
+  </div>
+  <div class="falling-leaf falling-leaf-2">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5" fill="var(--color-gold-light)" transform="rotate(25 12 12)" /></svg>
+  </div>
+  <div class="falling-leaf falling-leaf-3">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5" fill="var(--color-sage-light)" transform="rotate(-20 12 12)" /></svg>
+  </div>
+  <div class="falling-leaf falling-leaf-4">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5" fill="var(--color-sage)" transform="rotate(35 12 12)" /></svg>
+  </div>
+  <div class="falling-leaf falling-leaf-5">
+    <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5" fill="var(--color-gold)" transform="rotate(-40 12 12)" /></svg>
+  </div>
+
   <!-- Header -->
   <header class="header" id="header">
     <div class="container">
