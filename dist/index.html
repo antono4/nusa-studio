@@ -52,7 +52,10 @@
     /* ==================== VINE LEAF DECORATIONS ==================== */
     .vine-container {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       pointer-events: none;
       z-index: 1;
       overflow: hidden;
@@ -60,7 +63,7 @@
 
     .vine {
       position: absolute;
-      width: 120px;
+      width: 100px;
       height: 100vh;
     }
 
@@ -83,32 +86,32 @@
     .vine-path {
       fill: none;
       stroke: var(--color-sage);
-      stroke-width: 2;
+      stroke-width: 1.5;
       stroke-linecap: round;
-      opacity: 0.3;
-      filter: drop-shadow(0 0 3px rgba(139, 154, 125, 0.3));
+      opacity: 0.2;
+      filter: drop-shadow(0 0 2px rgba(139, 154, 125, 0.2));
     }
 
     .vine-path-gold {
       fill: none;
       stroke: var(--color-gold);
-      stroke-width: 1.5;
+      stroke-width: 1;
       stroke-linecap: round;
-      opacity: 0.25;
-      filter: drop-shadow(0 0 2px rgba(212, 165, 116, 0.3));
+      opacity: 0.15;
+      filter: drop-shadow(0 0 1px rgba(212, 165, 116, 0.2));
     }
 
     .leaf {
       transform-origin: center;
       fill: var(--color-sage);
-      opacity: 0.4;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      opacity: 0.25;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
     }
 
     .leaf-gold {
       fill: var(--color-gold-light);
-      opacity: 0.35;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      opacity: 0.2;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
     }
 
     .leaf-1 { animation: leaf-sway 4s ease-in-out infinite; transform-origin: 50% 0%; }
@@ -124,19 +127,19 @@
 
     .vine-glow {
       position: absolute;
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 154, 125, 0.1) 0%, transparent 70%);
-      filter: blur(30px);
+      background: radial-gradient(circle, rgba(139, 154, 125, 0.05) 0%, transparent 70%);
+      filter: blur(20px);
       animation: glow-pulse 6s ease-in-out infinite;
     }
 
-    .vine-glow-1 { top: 10%; left: -50px; animation-delay: 0s; }
-    .vine-glow-2 { top: 40%; left: -50px; animation-delay: 2s; }
-    .vine-glow-3 { top: 70%; left: -50px; animation-delay: 4s; }
-    .vine-glow-4 { top: 25%; right: -50px; animation-delay: 1s; }
-    .vine-glow-5 { top: 55%; right: -50px; animation-delay: 3s; }
+    .vine-glow-1 { top: 10%; left: -30px; animation-delay: 0s; }
+    .vine-glow-2 { top: 40%; left: -30px; animation-delay: 2s; }
+    .vine-glow-3 { top: 70%; left: -30px; animation-delay: 4s; }
+    .vine-glow-4 { top: 25%; right: -30px; animation-delay: 1s; }
+    .vine-glow-5 { top: 55%; right: -30px; animation-delay: 3s; }
 
     @keyframes glow-pulse {
       0%, 100% { opacity: 0.5; transform: scale(1); }
