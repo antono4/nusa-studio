@@ -244,6 +244,395 @@
       }
     }
 
+    /* ==================== STATS SECTION ==================== */
+    .stats {
+      background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(212, 165, 116, 0.3), transparent);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 60%;
+      background: linear-gradient(to bottom, transparent, rgba(212, 165, 116, 0.3), transparent);
+    }
+
+    .stat-item:last-child::after {
+      display: none;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-sage) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ==================== ABOUT SECTION ==================== */
+    .about {
+      padding: 10rem 0;
+      position: relative;
+    }
+
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--color-bg-elevated) 0%, var(--color-bg-card) 100%);
+      border: 1px solid rgba(212, 165, 116, 0.1);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(139, 154, 125, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+    }
+
+    .about-image-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      color: var(--color-gold);
+      opacity: 0.3;
+    }
+
+    .about-image-decoration {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 150px;
+      height: 150px;
+      border: 2px solid rgba(212, 165, 116, 0.2);
+      border-radius: 24px;
+      transform: rotate(6deg);
+    }
+
+    .about-content h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content h2 span {
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-sage) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-content p {
+      font-size: 1.0625rem;
+      color: var(--color-text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--color-bg-elevated);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    .about-feature-icon {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-warm) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .about-feature-icon svg {
+      width: 12px;
+      height: 12px;
+      color: var(--color-bg);
+    }
+
+    /* ==================== TESTIMONIALS SECTION ==================== */
+    .testimonials {
+      padding: 10rem 0;
+      background: var(--color-bg-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(212, 165, 116, 0.3), transparent);
+    }
+
+    .testimonials::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(212, 165, 116, 0.3), transparent);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .testimonial-card {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.4s var(--transition-smooth);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 165, 116, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      color: var(--color-gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-sage) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-bg);
+      font-weight: 600;
+    }
+
+    .testimonial-info h4 {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-info span {
+      font-size: 0.8125rem;
+      color: var(--color-text-subtle);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--color-gold);
+    }
+
+    /* ==================== CTA SECTION ==================== */
+    .cta {
+      padding: 8rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 100% 80% at 50% 50%, rgba(212, 165, 116, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 30% 50%, rgba(139, 154, 125, 0.08) 0%, transparent 50%),
+        var(--color-bg);
+    }
+
+    .cta-content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-content h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content h2 span {
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-sage) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-content p {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 1024px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2)::after {
+        display: none;
+      }
+
+      .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-image {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item::after {
+        display: none;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+
     body {
       font-family: var(--font-body);
       background-color: var(--color-bg);
@@ -1592,8 +1981,10 @@
           <span>NUSA STUDIO</span>
         </a>
         <nav class="nav">
+          <a href="#tentang" class="nav-link">Tentang</a>
           <a href="#layanan" class="nav-link">Layanan</a>
           <a href="#proses" class="nav-link">Proses</a>
+          <a href="#testimoni" class="nav-link">Testimoni</a>
           <a href="#kontak" class="nav-link">Kontak</a>
         </nav>
         <a href="#kontak" class="btn btn-primary">
@@ -1618,8 +2009,10 @@
         <path d="M18 6L6 18M6 6l12 12"/>
       </svg>
     </button>
+    <a href="#tentang" class="nav-link">Tentang</a>
     <a href="#layanan" class="nav-link">Layanan</a>
     <a href="#proses" class="nav-link">Proses</a>
+    <a href="#testimoni" class="nav-link">Testimoni</a>
     <a href="#kontak" class="nav-link">Kontak</a>
     <a href="#kontak" class="btn btn-primary">
       <span>Mulai Proyek</span>
@@ -1676,6 +2069,182 @@
       <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
         <path fill="rgba(212, 165, 116, 0.2)" d="M0,128L48,138.7C96,149,192,171,288,176C384,181,480,171,576,154.7C672,139,768,117,864,112C960,107,1056,117,1152,122.7C1248,128,1344,128,1392,128L1440,128L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"/>
       </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Proyek Selesai</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Klien Puas</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Tahun Pengalaman</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Dukungan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="tentang">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-image reveal">
+          <div class="about-image-content">N</div>
+          <div class="about-image-decoration"></div>
+        </div>
+        <div class="about-content reveal reveal-delay-1">
+          <h2>Tentang <span>Nusa Studio</span></h2>
+          <p>
+            Kami adalah studio kreatif independen yang fokus membantu bisnis kecil dan kreator lokal untuk tampil profesional di dunia digital. Dengan pengalaman lebih dari 5 tahun, kami telah membantu puluhan klien membangun kehadiran online yang meyakinkan.
+          </p>
+          <p>
+            Setiap proyek yang kami kerjakan dimulai dengan pemahaman mendalam tentang kebutuhan klien, lalu kami rancang solusi yang tepat sasaran — sederhana namun berkesan.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              Desain Premium
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              Responsif Mobile
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              Loading Cepat
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              SEO Friendly
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials section" id="testimoni">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Testimoni</span>
+        <h2 class="section-title">Kata Klien Kami</h2>
+        <p class="section-subtitle">
+          Jangan hanya percaya kata-kata kami. Dengarkan pengalaman langsung dari klien yang telah bekerja sama dengan kami.
+        </p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Website yang dibuat oleh Nusa Studio sangat membantu bisnis cafe kami tampil lebih profesional. Pelanggan baru meningkat sejak menggunakan landing page mereka!
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AS</div>
+            <div class="testimonial-info">
+              <h4>Andika Setiawan</h4>
+              <span>Pemilik Kedai Kopi Nusantara</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Proses kerja yang sangat transparan dan hasil yang melebihi ekspektasi. Portofolio website mereka sederhana tapi sangat impactful untuk brand fashion saya.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RK</div>
+            <div class="testimonial-info">
+              <h4>Ratna Kusuma</h4>
+              <span>Founder Ratu Craft Indonesia</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Sebagai fotografer, saya butuh website yang menampilkan karya dengan cara terbaik. Nusa Studio paham persis kebutuhan saya. Highly recommended!
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">BP</div>
+            <div class="testimonial-info">
+              <h4>Budi Pratama</h4>
+              <span>Wedding Photographer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta section" id="cta">
+    <div class="cta-bg"></div>
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>Siap Memulai <span>Proyek Anda?</span></h2>
+        <p>
+          Hubungi kami sekarang untuk konsultasi gratis. Mari diskusikan bagaimana kami bisa membantu meningkatkan kehadiran digital bisnis Anda.
+        </p>
+        <div class="cta-buttons">
+          <a href="#kontak" class="btn btn-primary">
+            <span>Mulai Konsultasi</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#layanan" class="btn btn-secondary">Lihat Layanan</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1827,10 +2396,12 @@
         <div class="footer-brand">
           <a href="#" class="footer-logo">NUSA STUDIO</a>
         </div>
-        <p class="footer-text">Website landing page sederhana, bersih, dan siap disesuaikan.</p>
+        <p class="footer-text">Studio kreatif independen untuk bisnis kecil dan kreator lokal.</p>
         <div class="footer-links">
+          <a href="#tentang" class="footer-link">Tentang</a>
           <a href="#layanan" class="footer-link">Layanan</a>
           <a href="#proses" class="footer-link">Proses</a>
+          <a href="#testimoni" class="footer-link">Testimoni</a>
           <a href="#kontak" class="footer-link">Kontak</a>
         </div>
       </div>
