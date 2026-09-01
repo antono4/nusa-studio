@@ -1,2 +1,26 @@
-Last updated: 2026-09-02 04:24:26 WIB
-Last updated: 2026-09-02 04:59:59 WIB
+# nusa-studio
+
+
+
+## 📋 Overview
+
+This repository contains **11 files** and is built with the following technologies:
+
+HTML
+
+## 🚀 Quick Start
+
+## ✨ Features
+
+- 📝 Auto-generated documentation
+
+## 🛠️ Technologies
+
+HTML
+
+## 📄 License
+
+MIT License
+
+---
+*Last updated: 2026-09-02 05:07:47 WIB*
